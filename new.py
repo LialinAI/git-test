@@ -1,3 +1,5 @@
+import os
+API=os.environ['API']
 x=1337
-if ${{ secrets.secret }}==x:
+if API==x:
 	print('Yooooo, mista WHITE')

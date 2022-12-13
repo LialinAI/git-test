@@ -1,0 +1,6 @@
+name: test_test
+env:
+	API: ${{secrets.SECRET}}
+run: | 
+	new
+
