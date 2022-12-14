@@ -1,5 +1,14 @@
 name: test_test
-env: 
-  API: ${{secrets.SECRET}}
-run: |
-  new
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test45
+        run: |
+          echo "done"
+        env: 
+          API: ${{secrets.SECRET}}
+      
+      
+  
