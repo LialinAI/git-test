@@ -8,7 +8,7 @@ jobs:
         run: |
           echo "done"
         env: 
-          API: ${{secrets.SECRET}}
+          SECRET: ${{ secrets.SECRET }}
       
       
   
