@@ -1,14 +1,34 @@
-name: test_test
+# name: test_test
+# on: push
+# jobs:
+#   job1:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: test45
+#         run: |
+#           new
+#         env: 
+#           SECRET: ${{ secrets.SECRET }}
+
+name: python
+
 on: push
+
 jobs:
-  job1:
+  test_env:
+    environment: TEST_SECRET
     runs-on: ubuntu-latest
     steps:
-      - name: test45
-        run: |
-          echo "done"
-        env: 
-          SECRET: ${{ secrets.SECRET }}
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+        
+    - name: Test env vars for python
+      run: python -c 'import os;print(os.environ)'
+      env:
+        ENV_SECRET: ${{ secrets.ENV_SECRET }} 
+        REPO_SECRET: ${{ secrets.REPO_SECRET }} 
       
       
   
